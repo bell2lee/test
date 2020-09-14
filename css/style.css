@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
 }
-body .spoqa_han_sans, body #main_footer header h1, body main article *, body main section header h1 {
+body .spoqa_han_sans, body #main_footer .contact_item *, body #main_footer header h1, body main article *, body main section header h1, body main #profile .description {
   font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
 }
 body .container {
@@ -16,10 +16,14 @@ body h1, body h2, body h3, body h4, body h5, body h6, body ul, body li, body ol 
 }
 body #main_header {
   height: 72px;
+  padding: 60px 0;
 }
 body #main_header .container {
   display: flex;
   flex-direction: row;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 body #main_header #logo img {
   height: 72px;
@@ -31,9 +35,35 @@ body #main_header nav ul {
 }
 body #main_header nav ul li {
   font-size: 40px;
+  margin-left: 14px;
 }
 body #main_header nav ul li a {
   color: black;
+}
+body main #profile .container {
+  display: flex;
+  align-items: center;
+}
+body main #profile img {
+  border-radius: 180px;
+  width: 349px;
+  height: 349px;
+}
+body main #profile .description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+body main #profile .description * {
+  font-size: 28px;
+}
+body main #profile .description *:nth-child(1), body main #profile .description *:nth-child(2) {
+  font-size: 46px;
+  font-weight: bold;
+}
+body main #profile .description *:nth-child(odd) {
+  text-align: right;
 }
 body main section {
   margin-top: 120px;
@@ -92,11 +122,21 @@ body main article.thumbnail_section .description {
   justify-content: center;
 }
 body #main_footer {
+  margin-top: 120px;
   padding: 120px 0;
   background-color: #eee;
 }
 body #main_footer header h1 {
   font-size: 46px;
+}
+body #main_footer .contact_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body #main_footer .contact_item i {
+  font-size: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
