@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
 }
-body .spoqa_han_sans, body #main_footer .contact_item *, body #main_footer header h1, body main article *, body main section header h1, body main #profile .description {
+body .spoqa_han_sans, body #main_footer .contact_item *, body #main_footer header h1, body main article *, body main section header h1, body main #profile .hashtag *, body main #profile .description {
   font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
 }
 body .container {
@@ -65,6 +65,21 @@ body main #profile .description *:nth-child(1), body main #profile .description 
 body main #profile .description *:nth-child(odd) {
   text-align: right;
 }
+body main #profile .hashtag {
+  display: block;
+  text-align: center;
+  margin-top: 70px;
+  line-height: 120px;
+}
+body main #profile .hashtag * {
+  margin-right: 44px;
+  font-size: 48px;
+  font-weight: bold;
+  display: inline-block;
+}
+body main #profile .hashtag *:before {
+  content: "#";
+}
 body main section {
   margin-top: 120px;
 }
@@ -82,7 +97,19 @@ body main section .section_content .img_grid {
   grid-row-gap: 20px;
 }
 body main section .section_content .img_grid img {
+  border-radius: 5px;
+  transition: 0.5s;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
+}
+body main section .section_content .img_grid img:hover {
+  position: relative;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 body main article {
   margin-top: 70px;
@@ -111,10 +138,15 @@ body main article.thumbnail_section h1 {
 body main article.thumbnail_section h2 {
   margin-bottom: 10px;
 }
-body main article.thumbnail_section img {
+body main article.thumbnail_section .img, body main article.thumbnail_section img {
   height: 164px;
   width: 164px;
   margin-right: 20px;
+}
+body main article.thumbnail_section .img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 body main article.thumbnail_section .description {
   display: flex;

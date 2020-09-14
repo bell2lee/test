@@ -72,6 +72,22 @@ body {
                 }
 
             }
+            .hashtag {
+                display:block;
+                text-align:center;
+                margin-top:70px;
+                line-height:120px;
+                *{
+                    @extend .spoqa_han_sans;
+                    margin-right:44px;
+                    font-size:48px;
+                    font-weight: bold;
+                    display:inline-block;
+                    &:before {
+                        content: '#';
+                    }
+                }
+            }
         }
         section{
             margin-top:120px;
@@ -91,8 +107,21 @@ body {
                     grid-column-gap: 20px;
                     grid-row-gap: 20px;
                     img {
+                        border-radius:5px;
+                        transition:.5s;
+                        position:relative;
+                        top:0;
+                        left:0;
+                        &:hover {
+                            position:relative;
+                            top:-5%;
+                            left:-5%;
+                            width:110%;
+                            box-shadow: 0 0 30px rgba(0,0,0,.5);
+                        }
                         width:100%;
                     }
+
                 }
             }
         }
@@ -124,11 +153,18 @@ body {
                 flex-direction: row;
                 h1 {margin-bottom: 14px;}
                 h2 {margin-bottom: 10px;}
-                img {
+                .img, img {
                     height:164px;
                     width:164px;
                     margin-right:20px;
                 }
+
+                .img {
+                    background-repeat:no-repeat;
+                    background-position: center center;
+                    background-size:contain;
+                }
+
 
                 .description {
                     display:flex;
