@@ -1,0 +1,102 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+body {
+  margin: 0;
+  padding: 0;
+}
+body .spoqa_han_sans, body #main_footer header h1, body main article *, body main section header h1 {
+  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
+}
+body .container {
+  margin: 0 auto;
+  width: 1084px;
+}
+body h1, body h2, body h3, body h4, body h5, body h6, body ul, body li, body ol {
+  margin: 0;
+  padding: 0;
+}
+body #main_header {
+  height: 72px;
+}
+body #main_header .container {
+  display: flex;
+  flex-direction: row;
+}
+body #main_header #logo img {
+  height: 72px;
+}
+body #main_header nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+body #main_header nav ul li {
+  font-size: 40px;
+}
+body #main_header nav ul li a {
+  color: black;
+}
+body main section {
+  margin-top: 120px;
+}
+body main section header h1 {
+  font-size: 46px;
+}
+body main section .section_content {
+  margin-left: 92px;
+}
+body main section .section_content .img_grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+body main section .section_content .img_grid img {
+  width: 100%;
+}
+body main article {
+  margin-top: 70px;
+}
+body main article h1 {
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+body main article h2 {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+body main article small {
+  font-size: 20px;
+  color: #333;
+}
+body main article.thumbnail_section {
+  display: flex;
+  flex-direction: row;
+}
+body main article.thumbnail_section h1 {
+  margin-bottom: 14px;
+}
+body main article.thumbnail_section h2 {
+  margin-bottom: 10px;
+}
+body main article.thumbnail_section img {
+  height: 164px;
+  width: 164px;
+  margin-right: 20px;
+}
+body main article.thumbnail_section .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body #main_footer {
+  padding: 120px 0;
+  background-color: #eee;
+}
+body #main_footer header h1 {
+  font-size: 46px;
+}
+
+/*# sourceMappingURL=style.css.map */

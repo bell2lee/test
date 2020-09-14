@@ -1,0 +1,115 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+body {
+    margin:0;
+    padding:0;
+    .spoqa_han_sans {
+        font-family:'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+    }
+    .container {margin:0 auto; width:1084px;}
+
+    h1, h2, h3, h4,h5,h6, ul, li, ol {
+        margin:0;
+        padding:0;
+    }
+
+    #main_header {
+        height:72px;
+        .container {
+            display:flex;
+            flex-direction: row;
+        }
+
+        #logo {
+            img {height:72px;}
+        }
+
+        nav {
+            ul {
+                list-style:none;
+                display:flex;
+                flex-direction: row;
+                li {
+                    font-size:40px;
+                    a {color:black;}
+                }
+            }
+
+        }
+    }
+
+    main {
+        section{
+            margin-top:120px;
+            header{
+                h1 {
+                    @extend .spoqa_han_sans;
+                    font-size:46px;
+                }
+            }
+            .section_content {
+                margin-left:92px;
+
+                .img_grid {
+                    margin-top:40px;
+                    display:grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-column-gap: 20px;
+                    grid-row-gap: 20px;
+                    img {
+                        width:100%;
+                    }
+                }
+            }
+        }
+
+        article {
+            margin-top:70px;
+
+            * {
+                @extend .spoqa_han_sans;
+            }
+            h1 {
+                font-weight: bold;
+                font-size:28px;
+                margin-bottom: 30px;
+            }
+            h2 {
+                font-weight: normal;
+                font-size:24px;
+                margin-bottom:20px;
+            }
+            small {
+                font-size:20px;
+                color:#333;
+            }
+
+            // 썸네일 섹션
+            &.thumbnail_section {
+                display:flex;
+                flex-direction: row;
+                h1 {margin-bottom: 14px;}
+                h2 {margin-bottom: 10px;}
+                img {
+                    height:164px;
+                    width:164px;
+                    margin-right:20px;
+                }
+
+                .description {
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    #main_footer {
+        padding:120px 0;
+        background-color:#eee;
+        header h1 {
+            @extend .spoqa_han_sans;
+            font-size:46px;
+        }
+    }
+}
