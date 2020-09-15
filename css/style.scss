@@ -46,6 +46,7 @@ body {
         #profile {
             .container {
                 display:flex;
+                flex-direction: row;
                 align-items: center;
             }
             img {
@@ -195,5 +196,58 @@ body {
             justify-content: center;
             i {font-size:40px;}
         }
+    }
+
+    #scroll {
+        position:fixed;
+        right:-30px;
+        top:50%;
+        margin-top:-250px;
+        height:500px;
+        transition: right .3s;
+        ul {
+            height:100%;
+            list-style:none;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            li {
+                a {
+                    color:#ccc;
+                    font-size:30px;
+                    i {}
+                    transition: color .3s;
+                    &:hover {
+                        color:#000;
+                    }
+                }
+                &.active {
+                    a {
+                        color:#000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    body {
+        .container {width:100%;}
+        main{
+            #profile {
+                .container {
+                    flex-direction: column;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 420px){
+
+    body {
+        article {}
     }
 }

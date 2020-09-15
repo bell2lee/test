@@ -42,6 +42,7 @@ body #main_header nav ul li a {
 }
 body main #profile .container {
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 body main #profile img {
@@ -169,6 +170,41 @@ body #main_footer .contact_item {
 }
 body #main_footer .contact_item i {
   font-size: 40px;
+}
+body #scroll {
+  position: fixed;
+  right: -30px;
+  top: 50%;
+  margin-top: -250px;
+  height: 500px;
+  transition: right 0.3s;
+}
+body #scroll ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body #scroll ul li a {
+  color: #ccc;
+  font-size: 30px;
+  transition: color 0.3s;
+}
+body #scroll ul li a:hover {
+  color: #000;
+}
+body #scroll ul li.active a {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  body .container {
+    width: 100%;
+  }
+  body main #profile .container {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
