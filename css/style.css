@@ -202,7 +202,9 @@ body #scroll ul li.active a {
   body .container {
     width: 100%;
   }
-  body main #profile .container {
+
+  body main #profile .container,
+body main article.thumbnail_section {
     flex-direction: column;
   }
 }

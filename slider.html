@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #banner {
+            position:relative;
+            width:100%;
+            height:500px;
+        }
+        #banner div {
+            opacity: 0;
+            position:absolute;
+            background-position:center center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            top:0;left:0;
+            height:100%;
+            width:100%;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div style="opacity:1; background-image:url('./assets/paulo-henrique-NHz4nZPoNB8-unsplash.jpg')"></div>
+        <div style="background-image:url('./assets/dylan-collette-6qNmwji-YeY-unsplash.jpg')"></div>
+        <div style="background-image:url('./assets/paulo-henrique-NHz4nZPoNB8-unsplash.jpg')"></div>
+        <div style="background-image:url('./assets/dylan-collette-6qNmwji-YeY-unsplash.jpg')"></div>
+        <div style="background-image:url('./assets/paulo-henrique-NHz4nZPoNB8-unsplash.jpg')"></div>
+        <div style="background-image:url('./assets/dylan-collette-6qNmwji-YeY-unsplash.jpg')"></div>
+    </div>
+
+    <script>
+        let banner = document.querySelector("#banner");
+        let bannerCount = 0;
+        console.log(banner.children);
+        function showBanner(num){
+            for(let i = 0; i < banner.children.length; i++)
+            {
+                console.log(banner[i]);
+                if(i == num)
+                {
+                    banner.children[i].style.visibility = 'visible';                    banner.children[i].style.opacity = 0;
+                    banner.children[i].style.opacity = 1;
+                }
+                else
+                {
+                    banner.children[i].style.visibility = 'hidden';                    banner.children[i].style.visibility = 'visible';
+                    banner.children[i].style.opacity = 0;
+
+                }
+            }
+        }
+
+        setInterval(function(){
+            if(bannerCount === banner.children.length)
+            {
+                bannerCount = 0;
+            }
+
+            showBanner(bannerCount);
+            bannerCount++;
+        }, 1000);
+
+    </script>
+</body>
+</html>

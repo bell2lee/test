@@ -232,22 +232,16 @@ body {
 }
 
 @media (max-width: 768px){
-    body {
-        .container {width:100%;}
-        main{
-            #profile {
-                .container {
-                    flex-direction: column;
-                }
-            }
-        }
-
+    body .container {width:100%;}
+    body main #profile .container,
+    body main article.thumbnail_section
+    {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 420px){
+}
 
-    body {
-        article {}
-    }
+@media (max-width:400px){
 }
