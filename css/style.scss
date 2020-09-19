@@ -232,15 +232,91 @@ body {
 }
 
 @media (max-width: 768px){
-    body .container {width:100%;}
-    body main #profile .container,
-    body main article.thumbnail_section
-    {
-        flex-direction: column;
+    body {
+        overflow-x: hidden;
+        .container {width:100%;}
+        main {
+            article.thumbnail_section,
+            #profile {
+                .container {
+                    flex-direction: column;
+                }
+                .description{
+                    margin-top:50px;
+                }
+            }
+            article.thumbnail_section{
+                .description {
+                    margin-top:40px;
+                }
+            }
+
+            section {
+                padding-left:20px;
+                padding-right:20px;
+
+                .section_content {
+                    margin-left:20px;
+
+                    .img_grid {
+                        grid-template-columns: repeat(2, 1fr);
+
+                    }
+                }
+
+            }
+        }
     }
+    body main article.thumbnail_section .description{}
 }
 
 @media (max-width: 420px){
+    body {
+        main {
+            #profile {
+                .container {
+                    flex-direction: column;
+                }
+                .hashtag {
+                    display:flex;
+                    flex-direction: column;
+                    line-height:80px;
+                }
+                .hashtag * {
+
+                    font-size:2em;
+                }
+                .description{
+                    margin-top:50px;
+                    padding-left:20px;
+                    padding-right: 20px;
+                    grid-template-columns: repeat(1, 1fr);
+                    div {
+                        word-break:keep-all;
+                        &:nth-child(even) {
+                            color:#777;
+                            font-size:1.5em;
+                        }
+                        &:nth-child(odd){
+                            color:#333;
+                            text-align:left;
+                        }
+                    }
+                }
+            }
+            section {
+                padding-left:0px;
+                padding-right:0px;
+
+                .section_content {
+                    .img_grid {
+                        grid-template-columns: repeat(1, 1fr);
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 @media (max-width:400px){

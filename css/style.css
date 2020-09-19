@@ -199,13 +199,69 @@ body #scroll ul li.active a {
 }
 
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
   body .container {
     width: 100%;
   }
-
-  body main #profile .container,
-body main article.thumbnail_section {
+  body main article.thumbnail_section .container,
+body main #profile .container {
     flex-direction: column;
+  }
+  body main article.thumbnail_section .description,
+body main #profile .description {
+    margin-top: 50px;
+  }
+  body main article.thumbnail_section .description {
+    margin-top: 40px;
+  }
+  body main section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  body main section .section_content {
+    margin-left: 20px;
+  }
+  body main section .section_content .img_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 420px) {
+  body main #profile .container {
+    flex-direction: column;
+  }
+  body main #profile .hashtag {
+    display: flex;
+    flex-direction: column;
+    line-height: 80px;
+  }
+  body main #profile .hashtag * {
+    font-size: 2em;
+  }
+  body main #profile .description {
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body main #profile .description div {
+    word-break: keep-all;
+  }
+  body main #profile .description div:nth-child(even) {
+    color: #777;
+    font-size: 1.5em;
+  }
+  body main #profile .description div:nth-child(odd) {
+    color: #333;
+    text-align: left;
+  }
+  body main section {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  body main section .section_content .img_grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
