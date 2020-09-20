@@ -196,6 +196,12 @@ body {
             justify-content: center;
             i {font-size:40px;}
         }
+        .description {
+            margin-top:70px;
+            h2 {
+                margin-bottom:40px;
+            }
+        }
     }
 
     #scroll {
@@ -266,6 +272,12 @@ body {
 
             }
         }
+        #main_footer {
+            .description {
+                padding-left: 20px;
+                padding-right:20px;
+            }
+        }
     }
     body main article.thumbnail_section .description{}
 }
@@ -313,7 +325,6 @@ body {
                         grid-template-columns: repeat(1, 1fr);
                     }
                 }
-
             }
         }
     }

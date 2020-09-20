@@ -171,6 +171,12 @@ body #main_footer .contact_item {
 body #main_footer .contact_item i {
   font-size: 40px;
 }
+body #main_footer .description {
+  margin-top: 70px;
+}
+body #main_footer .description h2 {
+  margin-bottom: 40px;
+}
 body #scroll {
   position: fixed;
   right: -30px;
@@ -225,6 +231,10 @@ body main #profile .description {
   }
   body main section .section_content .img_grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  body #main_footer .description {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media (max-width: 420px) {
