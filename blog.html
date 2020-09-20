@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leejh.info</title>
+    <link rel="stylesheet" href="css/xeicon.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="main_header">
+    <div class="container">
+        <div id="logo">
+            <a href=""><img src="assets/logo.svg" alt=""></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href=""><i class="xi-github"></i></a></li>
+                <li><a href=""><i class="xi-wordpress-official"></i></a></li>
+                <li><a href=""><i class="xi-instagram"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div id="sub_content" class="container">
+    <aside>
+        <h1>분류</h1>
+        <ul>
+            <li><a href="">맛집</a></li>
+            <li><a href="">IT</a>
+                <ul>
+                    <li><a href="">백엔드</a></li>
+                    <li><a href="">앱 프론트엔드</a></li>
+                    <li><a href="">웹 프론트엔드</a></li>
+                    <li><a href="">서버/클라우드</a></li>
+                    <li><a href="">기타</a></li>
+                </ul>
+            </li>
+            <li><a href="">일상</a></li>
+        </ul>
+    </aside>
+    <main>
+        <section>
+            <header class="information">
+                <h1>python flask에 SSL적용하기 (Let’s Encrypt) | 지도 기반 SNS 프로젝트 4 [python, flask, mongodb]</h1>
+                <div>
+                    <ul>
+                        <li>paperlee</li>
+                        <li>8 개월 전에</li>
+                        <li>백엔드</li>
+                    </ul>
+                </div>
+            </header>
+            <div id="document_content">
+                    <p>HTTP통신에서 데이터를 암호화해서 보내지 않으면 중간에 패킷을 가로채는 것을 대비해야한다. (공공네트워크 등에서 SSL 미적용 웹은 안 들어가는게 맞음)</p>
+                    <p>&nbsp;</p>
+                    <p>기존 nginx나 apache에서 했던거처럼 인증서를 발급받고 flask에 연결만 해주면 될것으로 예상한다.</p>
+                    <p>&nbsp;</p>
+                    <h1>Open SSL, pyopenssl 설치</h1>
+                    <p>둘다 설치 되어 있다면 해당 과정 패스</p>
+                    <pre class="EnlighterJSRAW" data-enlighter-language="no-highlight">$ sudo apt install openssl
+$ sudo pip3 install pyopenssl</pre>
+                    <h1>Let’s Encrypt 인증서 발급</h1>
+                    <p>Let’s Encrypt는 무료 SSL 인증서이다. https://letsencrypt.org/ko/</p>
+                    <h2>certbot</h2>
+                    <p>Let’s Encrypt 인증서를 자동으로 발급받아주는 프로그램 https://certbot.eff.org/</p>
+                    <p>아래 인증서 발급 과정 전 꼭 웹서버를 끄고 진행한다.</p>
+                    <pre class="EnlighterJSRAW" data-enlighter-language="no-highlight">$ wget https://dl.eff.org/certbot-auto
+#실행을 위한 권한조정
+$ chmod a+x certbot-auto
+$ ./certbot-auto certonly --standalone -d 도메인
+$ cp /etc/letsencrypt/live/도메인/fullchain.pem  /애플리케이션경로/cert/server.crt
+$ cp /etc/letsencrypt/live/도메인/privkey.pem  /애플리케이션경로/cert/server.key</pre>
+                    <p>&nbsp;</p>
+                    <h2>flask ssl 적용하기</h2>
+                    <pre class="EnlighterJSRAW" data-enlighter-language="python">from flask import Flask
+from flask_restful import Resource, Api, reqparse
+from flask_cors import CORS
+
+class UserApi(Resource):
+    def get(self, re_id):
+        return {'msg': re_id}
+
+    def post(self, re_id):
+        return {'msg': 'post ok'}
+
+    def put(self):
+        return {'msg': 'put ok'}
+
+    def delete(self):
+        return {'msg': 'delete ok'}
+
+
+app = Flask(__name__)
+CORS(app)
+api = Api(app=app)
+api.add_resource(UserApi, '/v0.0/user/&lt;re_id&gt;')
+
+
+if __name__ == '__main__':
+    # 하단 cert/server.crt 부분을 작성자 의도에 맞게 수정해서 실행.
+    app.run(host="0.0.0.0", port="5000", debug=True, ssl_context=('./cert/server.crt', './cert/server.key'))</pre>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </div>
+            <div class="comment">
+                <textarea></textarea>
+                <button>작성</button>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<footer id="main_footer">
+    <div class="container">
+        <header>
+            <h1>Contact me</h1>
+        </header>
+        <div class="description">
+            <h2>궁금한 사항이 있다면 아래로 연락주세요 😉</h2>
+            <div class="contact_item">
+                <i class="xi-mail-o"></i>
+                <p>paperlee@kookmin.ac.kr</p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!--script-->
+<script src="js/scrollBar.js"></script>
+</body>
+</html>

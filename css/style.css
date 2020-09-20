@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 body {
   margin: 0;
@@ -154,6 +155,137 @@ body main article.thumbnail_section .description {
   flex-direction: column;
   justify-content: center;
 }
+body #sub_content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 120px;
+}
+body #sub_content aside {
+  width: 300px;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  border-radius: 4px;
+}
+body #sub_content aside h1 {
+  padding: 30px 0;
+  font-size: 24px;
+}
+body #sub_content aside ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+body #sub_content aside ul li {
+  padding: 15px;
+  transition: background-color 0.3s;
+}
+body #sub_content aside ul li:hover {
+  background-color: #eee;
+}
+body #sub_content aside ul li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  font-weight: bold;
+}
+body #sub_content aside ul li ul li a {
+  font-weight: normal;
+}
+body #sub_content main {
+  flex: 1;
+}
+body #sub_content main section {
+  margin-top: 0;
+}
+body #sub_content main section header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 70px;
+}
+body #sub_content main section header h1 {
+  text-align: center;
+}
+body #sub_content main section header h1:before {
+  content: "“";
+  font-size: 100px;
+  position: relative;
+  top: 30px;
+  left: -15px;
+}
+body #sub_content main section header h1:after {
+  content: "”";
+  font-size: 100px;
+  position: absolute;
+}
+body #sub_content main section header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+}
+body #sub_content main section header ul li {
+  margin-left: 30px;
+  font-size: 18px;
+}
+body #sub_content main section #document_content {
+  flex: 1;
+  max-width: 100%;
+  word-break: keep-all;
+  padding: 30px;
+  font-size: 18px;
+}
+body #sub_content main section #document_content h1 {
+  font-size: 48px;
+}
+body #sub_content main section #document_content h2 {
+  font-size: 44px;
+}
+body #sub_content main section #document_content h3 {
+  font-size: 40px;
+}
+body #sub_content main section #document_content h4 {
+  font-size: 36px;
+}
+body #sub_content main section #document_content h5 {
+  font-size: 32px;
+}
+body #sub_content main section #document_content h6 {
+  font-size: 28px;
+}
+body #sub_content main section #document_content pre {
+  white-space: pre-wrap;
+}
+body #sub_content main section .comment {
+  padding: 30px;
+}
+body #sub_content main section .comment textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 40px;
+  transition: box-shadow 0.5s;
+}
+body #sub_content main section .comment textarea:focus {
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.2);
+}
+body #sub_content main section .comment button {
+  background-color: #1785cd;
+  transition: background-color 0.3s;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+body #sub_content main section .comment button:hover {
+  background-color: #379add;
+}
 body #main_footer {
   margin-top: 120px;
   padding: 120px 0;
@@ -236,6 +368,21 @@ body main #profile .description {
     padding-left: 20px;
     padding-right: 20px;
   }
+  body #sub_content {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  body #sub_content aside {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  body #sub_content aside ul {
+    display: flex;
+  }
+  body #sub_content aside ul li {
+    padding: 10px;
+  }
 }
 @media (max-width: 420px) {
   body main #profile .container {
@@ -272,6 +419,16 @@ body main #profile .description {
   }
   body main section .section_content .img_grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+  body #sub_content aside {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+  body #sub_content aside ul {
+    display: block;
+  }
+  body #sub_content aside ul li {
+    padding: 10px;
   }
 }
 
