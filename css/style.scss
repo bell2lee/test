@@ -126,6 +126,33 @@ body {
             }
         }
 
+        #category_section{
+            ul {
+                list-style: none;
+                padding:0 30px ;
+                li{
+                    @extend .spoqa_han_sans;
+                    font-size:20px;
+                    margin-top:40px;
+                    a {
+                        color:black;
+                        text-decoration: none;
+                        &:before {
+                            content: "\201C";
+                            font-size:40px;
+                            position:relative;
+                            left:-15px;
+                        }
+                        &:after {
+                            content: "\201D";
+                            font-size:40px;
+                            position:absolute;
+                        }
+                    }
+                }
+            }
+        }
+
         article {
             margin-top:70px;
 

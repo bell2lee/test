@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
-body .spoqa_han_sans, body #main_footer .contact_item *, body #main_footer header h1, body main article *, body main section header h1, body main #profile .hashtag *, body main #profile .description {
+body .spoqa_han_sans, body #main_footer .contact_item *, body #main_footer header h1, body main article *, body main #category_section ul li, body main section header h1, body main #profile .hashtag *, body main #profile .description {
   font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
 }
 body .container {
@@ -112,6 +112,29 @@ body main section .section_content .img_grid img:hover {
   left: -5%;
   width: 110%;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+body main #category_section ul {
+  list-style: none;
+  padding: 0 30px;
+}
+body main #category_section ul li {
+  font-size: 20px;
+  margin-top: 40px;
+}
+body main #category_section ul li a {
+  color: black;
+  text-decoration: none;
+}
+body main #category_section ul li a:before {
+  content: "“";
+  font-size: 40px;
+  position: relative;
+  left: -15px;
+}
+body main #category_section ul li a:after {
+  content: "”";
+  font-size: 40px;
+  position: absolute;
 }
 body main article {
   margin-top: 70px;

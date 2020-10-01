@@ -17,6 +17,7 @@ function changeActiveIcon(){
     {
         if(sections[i].getBoundingClientRect().top > 0)
         {
+            console.log(sections[i].getBoundingClientRect().top);
             for (let j = 0; j < scrollItems.length; j++)
             {
                 if (i === j)
@@ -26,11 +27,6 @@ function changeActiveIcon(){
             }
             break;
         }
-        // console.log(window.scrollY, sections[i].clientHeight)
-        // if(window.scrollY > sections[i].clientHeight){
-        //     console.log(i);
-        //     break;
-        // }
     }
 }
 
